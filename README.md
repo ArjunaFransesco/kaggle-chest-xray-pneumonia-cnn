@@ -66,7 +66,10 @@ $$\mathcal{L}_{\text{logloss}} = -\frac{1}{N} \sum_{i=1}^N \left[ y_i \log(\hat{
 
 ```
 kaggle-chest-xray-pneumonia-cnn/
-├── app.py                     # Streamlit interactive diagnostic dashboard
+├── .github/
+│   └── workflows/
+│       └── ci.yml             # GitHub Actions CI automated testing
+├── app.py                     # Streamlit interactive clinical dashboard
 ├── data/
 │   ├── raw/
 │   │   └── kaggle_chest_xray_pneumonia_cnn_dataset.csv   # Raw domain dataset
@@ -81,6 +84,10 @@ kaggle-chest-xray-pneumonia-cnn/
 ├── reports/
 │   ├── metrics.json           # Serialized evaluation metrics
 │   └── evaluation_plot.png    # High-resolution benchmark visualizer
+├── src/
+│   └── predict.py             # Batch inference & threshold calibration engine
+├── tests/
+│   └── test_model.py          # Automated unit test suite
 ├── requirements.txt           # Environment dependencies
 ├── LICENSE                    # MIT Open Source License
 └── README.md                  # Project documentation & benchmark overview
@@ -99,12 +106,17 @@ venv\Scripts\activate  # On Linux/macOS: source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Launch Interactive Streamlit Dashboard
+### 2. Run Automated Unit Tests
+```bash
+python -m unittest discover tests
+```
+
+### 3. Launch Interactive Clinical Dashboard
 ```bash
 streamlit run app.py
 ```
 
-### 3. Open End-to-End Jupyter Notebook
+### 4. Open End-to-End Jupyter Notebook
 ```bash
 jupyter notebook notebooks/kaggle_chest_xray_pneumonia_cnn_pipeline.ipynb
 ```
@@ -114,4 +126,6 @@ jupyter notebook notebooks/kaggle_chest_xray_pneumonia_cnn_pipeline.ipynb
 ## 👤 Author & Portfolio
 - **Author**: **[Arjuna Fransesco](https://github.com/ArjunaFransesco)**
 - **GitHub Repositories**: [https://github.com/ArjunaFransesco?tab=repositories](https://github.com/ArjunaFransesco?tab=repositories)
-- **Portfolio Website**: [https://github.com/ArjunaFransesco/arjuna-portfolio](https://github.com/ArjunaFransesco/arjuna-portfolio)
+- **Live Portfolio Website**: [https://arjunafransesco.github.io/arjuna-portfolio/](https://arjunafransesco.github.io/arjuna-portfolio/)
+- **LinkedIn**: [https://www.linkedin.com/in/arjunafransesco](https://www.linkedin.com/in/arjunafransesco)
+
